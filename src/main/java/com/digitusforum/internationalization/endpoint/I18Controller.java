@@ -15,7 +15,7 @@ public class I18Controller {
     @Autowired
     public I18Service i18Service = new I18Service();
 
-    @RequestMapping(value = "/i18")
+    @RequestMapping(value = "/i18/v1")
     public InternationalizationVO internationalization(@RequestBody InternationalizationVO i18) {
  
     	//todo fazer um teste que pegue todas as keys e bata em todos os locales
