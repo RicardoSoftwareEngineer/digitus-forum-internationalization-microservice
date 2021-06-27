@@ -17,10 +17,6 @@ public class I18Controller {
 
     @RequestMapping(value = "/i18/v1")
     public InternationalizationVO internationalization(@RequestBody InternationalizationVO i18) {
- 
-    	//todo fazer um teste que pegue todas as keys e bata em todos os locales
-    	i18 = i18Service.getInternationalizedString(i18);
-
-        return i18;
+        return i18Service.getInternationalizedString(i18);
     }
 }
