@@ -1,7 +1,11 @@
 
 # Internationalization
 
-Internationalization is a microservice responsible for translate the messages sent to the user based on a header called 'locale'
+Internationalization is a microservice responsible for translate the messages sent to the user based on a header called 'locale'. 
+
+Its intended to be used internaly by others microservices, not to be exposed on internet, thats why the requests are not authenticated with jwt token
+
+locales available: en_us and pt_br
 
 
 ## Made with
@@ -14,6 +18,10 @@ Internationalization is a microservice responsible for translate the messages se
 ## Installation
 
 Import on your preferred IDE as a maven project and run it like any other spring boot project
+
+## Postman reqs
+
+To make your life easier I put all requests available for download directly in your postman [here](https://www.getpostman.com/collections/3f7d6ea128d4b85c9943)
 
 ## Dependency
 
