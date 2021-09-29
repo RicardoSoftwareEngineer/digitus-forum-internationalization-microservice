@@ -1,4 +1,4 @@
-package com.digitusforum.internationalization.i18;
+package com.digitusforum.internationalization;
 
 import i18.InternationalizationVO;
 
