@@ -1,4 +1,4 @@
-package com.digitusforum.internationalization.endpoint;
+package com.digitusforum.internationalization.util;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

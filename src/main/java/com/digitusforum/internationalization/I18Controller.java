@@ -1,6 +1,6 @@
-package com.digitusforum.internationalization.endpoint;
+package com.digitusforum.internationalization;
 
-import com.digitusforum.internationalization.service.I18Service;
+import i18.InternationalizationVO;
 
 import java.util.Optional;
 
@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vo.InternationalizationVO;
 
 @RestController
 public class I18Controller {
