@@ -1,4 +1,4 @@
-package com.digitusforum.internationalization.endpoint;
+package com.digitusforum.internationalization.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

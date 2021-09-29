@@ -1,4 +1,4 @@
-package com.digitusforum.internationalization.service;
+package com.digitusforum.internationalization.i18;
 
 import java.util.Locale;
 
@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import vo.InternationalizationVO;
+import i18.InternationalizationVO;
 
 @Service
 public class I18Service implements MessageSourceAware {
