@@ -1,6 +1,6 @@
 package com.digitusforum.internationalization;
 
-import i18.InternationalizationVO;
+import i18.I18VO;
 
 import java.util.Optional;
 
@@ -15,7 +15,25 @@ public class I18Controller {
     public I18Service i18Service = new I18Service();
 
     @RequestMapping(value = "/i18/v1")
-    public InternationalizationVO internationalization(@RequestBody InternationalizationVO i18) {
+    public I18VO internationalization(@RequestBody I18VO i18) {
         return i18Service.getInternationalizedString(i18);
+    }
+    
+    @RequestMapping(value = "/i18/v1/createUpdate")
+    public Object create(@RequestBody I18VO i18) {
+    	//TODO aqui eu vou fazer uma query no banco buscando as i18 que faltam
+    	//terei um teste automatico que busca mensagens faltantes entre linguas diferentes
+    	//o teste aumatico atualiza a tabela faltante quando é adicionado uma mensagem faltante
+    	
+        return i18Service.createUpdate(i18);
+    }
+    
+    @RequestMapping(value = "/i18/v1/missing")
+    public Object missing() {
+    	//TODO aqui eu vou fazer uma query no banco buscando as i18 que faltam
+    	//terei um teste automatico que busca mensagens faltantes entre linguas diferentes
+    	//o teste aumatico atualiza a tabela faltante quando é adicionado uma mensagem faltante
+    	
+        return i18Service.checkMissingMessages();
     }
 }
