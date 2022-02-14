@@ -6,6 +6,7 @@ target/
 
 .mvn
 logs*
+/database/
 
 
 ### STS ###
