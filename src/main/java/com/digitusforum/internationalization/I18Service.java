@@ -29,9 +29,12 @@ public class I18Service {
 				i18VO.setMessage(i18FromDB.getMessage());
 			}
 			if (i18FromDB == null) {
-				i18VO.setMessage(
-						"We are working ta add a internacionalized message here, hope the code make sense for you: "
-								+ i18VO.getKey() + ", sorry the incovenience");
+				/*
+				 * i18VO.setMessage(
+				 * "We are working ta add a internacionalized message here, hope the code make sense for you: "
+				 * + i18VO.getKey() + ", sorry the incovenience");
+				 */
+				i18VO.setMessage(i18VO.getKey());
 			}
 		}
 		return i18VO;
