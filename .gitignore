@@ -6,12 +6,6 @@ target/
 
 .mvn
 logs*
-/database/*.db
-/database
-/database/
-database
-database/*
-database/
 *.log
 
 
