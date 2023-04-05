@@ -15,7 +15,7 @@ public class I18Entity {
 	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
 	private String id;
 	private String locale;
-	private String key;
+	private String keyy;
 	private String message;
 
 	public String getId() {
@@ -34,12 +34,12 @@ public class I18Entity {
 		this.locale = locale;
 	}
 
-	public String getKey() {
-		return key;
+	public String getKeyy() {
+		return keyy;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setKeyy(String keyy) {
+		this.keyy = keyy;
 	}
 
 	public String getMessage() {

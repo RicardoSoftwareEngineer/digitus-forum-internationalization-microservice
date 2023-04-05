@@ -18,7 +18,7 @@ public class I18Service {
 	I18MissingRepository i18MissingRepository;
 
 	public I18VO getInternationalizedString(I18VO i18VO) {
-		I18Entity i18FromDB = i18Repository.findByLocaleAndKey(i18VO.getLocale(), i18VO.getKey());
+		I18Entity i18FromDB = i18Repository.findByLocaleAndKeyy(i18VO.getLocale(), i18VO.getKey());
 		if (i18FromDB != null) {
 			i18VO.setMessage(i18FromDB.getMessage());
 		}
@@ -41,13 +41,13 @@ public class I18Service {
 	}
 
 	public void saveMissingEntity(I18VO i18VO) {
-		I18MissingEntity i18MissingEntity = i18MissingRepository.findByLocaleAndKey(i18VO.getLocale(), i18VO.getKey());
+		I18MissingEntity i18MissingEntity = i18MissingRepository.findByLocaleAndKeyy(i18VO.getLocale(), i18VO.getKey());
 		if (i18MissingEntity == null)
 			i18MissingRepository.save(new ModelMapper().map(i18VO, I18MissingEntity.class));
 	}
 
 	public I18Entity tryEnUs(I18VO i18VO) {
-		return i18Repository.findByLocaleAndKey("en_us", i18VO.getKey());
+		return i18Repository.findByLocaleAndKeyy("en_us", i18VO.getKey());
 	}
 
 	public Object createUpdate(I18VO i18VO) {
@@ -58,7 +58,7 @@ public class I18Service {
 		if (StringUtils.isBlank(i18VO.getMessage()))
 			throw new ResponseStatusException(HttpStatus.FORBIDDEN, M.I18_MISSING_MESSAGE);
 
-		I18Entity i18FromDB = i18Repository.findByLocaleAndKey(i18VO.getLocale(), i18VO.getKey());
+		I18Entity i18FromDB = i18Repository.findByLocaleAndKeyy(i18VO.getLocale(), i18VO.getKey());
 		if (i18FromDB != null) {
 			i18FromDB.setMessage(i18VO.getMessage());
 			i18FromDB = i18Repository.save(i18FromDB);
@@ -72,7 +72,7 @@ public class I18Service {
 	}
 
 	public void updateMissingMessages(I18VO i18VO) {
-		I18MissingEntity i18 = i18MissingRepository.findByLocaleAndKey(i18VO.getLocale(), i18VO.getKey());
+		I18MissingEntity i18 = i18MissingRepository.findByLocaleAndKeyy(i18VO.getLocale(), i18VO.getKey());
 		if(i18 != null)
 			i18MissingRepository.deleteById(i18.getId());
 	}
