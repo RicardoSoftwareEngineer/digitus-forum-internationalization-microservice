@@ -1,5 +1,8 @@
 package com.digitusforum.internationalization;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,5 +82,12 @@ public class I18Service {
 
 	public Object checkMissingMessages() {
 		return i18MissingRepository.findAll();
+	}
+
+	public List<I18Entity> listByLocale(String locale) {
+		if (StringUtils.isBlank(locale)) {
+			return Collections.emptyList();
+		}
+		return i18Repository.findByLocale(locale);
 	}
 }

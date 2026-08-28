@@ -1,7 +1,7 @@
 <!-- para IA. não é README de humano. -->
 # SPEC — internationalization
 
-status: v0.3
+status: v0.4
 sha: `ce4f68e`
 data: 2026-08-28
 
@@ -18,7 +18,7 @@ MS **interno** (porta `8081`). Mensagens de UI por `locale` + chave. Sem auth HT
 
 ## REGRA
 - REGRA-I18-1: uma linha = `locale` + `keyy` + `message`. A coluna da chave **se chama `keyy`** (não `key`).
-- REGRA-I18-2: leitura na borda é pública (`/firewall/internationalization/v1/i18`). Escrita (`createUpdate`) e `missing` são internas.
+- REGRA-I18-2: leitura na borda é pública (`/firewall/internationalization/v1/i18` e CONTRATO-FRONT-BUNDLE). Escrita (`createUpdate`) e `missing` são internas.
 - REGRA-I18-3: chave ausente pode ser registrada em `InternacionalizationMissing` (`locale`,`keyy`) para o autor completar depois.
 - REGRA-I18-4: firewall pode cachear; `deleteCache` na borda exige token.
 - REGRA-I18-5: **revogado** (2026-08-28). Course vira Training. Ver REGRA-TRAINING-I18-5.
@@ -40,11 +40,10 @@ MS **interno** (porta `8081`). Mensagens de UI por `locale` + chave. Sem auth HT
 - `/i18/v1` — get por locale+keyy
 - `/i18/v1/createUpdate`
 - `/i18/v1/missing`
+- CONTRATO-FRONT-BUNDLE `POST /i18/v1/frontend` — lista i18 do locale (body/header). JSON array com `keyy`+`message` (I18Entity). Público no MS (sem auth).
 - health `/i18/v1/healthCheck`
 
-Não existe no MS (só o front chama): `/i18/v1/frontend` e `/internationalization/v1/frontend`. GAP-FRONT-BUNDLE.
-
 ## GAP
-- GAP-FRONT-BUNDLE: vitrine quer um dump de todas as chaves do locale. Spec: endpoint de bundle na borda (público?) ou o front chama `/i18` chave a chave?
+- GAP-FRONT-BUNDLE: **revogado** (2026-08-28). CONTRATO-FRONT-BUNDLE.
 - GAP-WRITE-AUTH: createUpdate interno sem token. Ok enquanto REGRA-EDGE-1 vale. Se o MS vazar, vira P0.
 - GAP-KEYY: VO usa `key`, entidade usa `keyy`. Leitura passa `vo.key` na query (ok). INSERT via ModelMapper **não** copia `key`→`keyy` (fica null). Isso é **bug de código** contra REGRA-I18-1, não GAP de produto.
