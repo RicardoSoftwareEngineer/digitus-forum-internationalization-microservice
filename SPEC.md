@@ -44,3 +44,4 @@ Não existe no MS (só o front chama): `/i18/v1/frontend` e `/internationalizati
 ## GAP
 - GAP-FRONT-BUNDLE: vitrine quer um dump de todas as chaves do locale. Spec: endpoint de bundle na borda (público?) ou o front chama `/i18` chave a chave?
 - GAP-WRITE-AUTH: createUpdate interno sem token. Ok enquanto INV-EDGE-1 vale. Se o MS vazar, vira P0.
+- GAP-KEYY: VO usa `key`, entidade usa `keyy`. Leitura passa `vo.key` na query (ok). INSERT via ModelMapper **não** copia `key`→`keyy` (fica null). Isso é **bug de código** contra INV-I18-1, não GAP de produto.
