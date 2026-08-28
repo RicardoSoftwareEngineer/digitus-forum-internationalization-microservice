@@ -1,8 +1,8 @@
 <!-- para IA. não é README de humano. -->
 # SPEC — internationalization
 
-status: v0.2
-sha: `3ded229`
+status: v0.3
+sha: `ce4f68e`
 data: 2026-08-28
 
 ## Como usar
@@ -21,12 +21,14 @@ MS **interno** (porta `8081`). Mensagens de UI por `locale` + chave. Sem auth HT
 - REGRA-I18-2: leitura na borda é pública (`/firewall/internationalization/v1/i18`). Escrita (`createUpdate`) e `missing` são internas.
 - REGRA-I18-3: chave ausente pode ser registrada em `InternacionalizationMissing` (`locale`,`keyy`) para o autor completar depois.
 - REGRA-I18-4: firewall pode cachear; `deleteCache` na borda exige token.
-- REGRA-I18-5: idioma da vitrine (`pt_BR` / `en_US`) e textos que mudam com locale passam **por este MS**. Não duplicar Course por idioma (SOLID).
+- REGRA-I18-5: **revogado** (2026-08-28). Course vira Training. Ver REGRA-TRAINING-I18-5.
+- REGRA-TRAINING-I18-5: idioma da vitrine (`pt_BR` / `en_US`) e textos que mudam com locale passam **por este MS**. Não duplicar Training por idioma (SOLID).
 
 ## NÃO
 - NÃO-EXPOSE da escrita
 - NÃO-SHUTDOWN
-- NÃO-CURSO-ROW: não duplica Course por locale. name/sinopse “de produto” no Course são identidade; variação de idioma = `keyy` aqui.
+- NÃO-CURSO-ROW: **revogado** (2026-08-28). Course vira Training. Ver NÃO-TRAINING-ROW.
+- NÃO-TRAINING-ROW: não duplica Training por locale. name/sinopse “de produto” no Training são identidade; variação de idioma = `keyy` aqui.
 
 ## DADOS
 | id | tabela | campos |
