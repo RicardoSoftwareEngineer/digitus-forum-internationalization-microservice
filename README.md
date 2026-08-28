@@ -47,7 +47,7 @@ Its intended to be used internaly by others microservices, not to be exposed on 
 ## Microservices ecosystem
 
 Internationalization is one of the following plataform microservices
- - [Course](https://github.com/RicardoCampinas/digitus-forum-course-microservice)
+ - [Training](https://github.com/RicardoCampinas/digitus-forum-course-microservice)
  - [Firewall](https://github.com/RicardoCampinas/digitus-forum-firewall-microservice)
  - [Internationalization](https://github.com/RicardoCampinas/digitus-forum-internationalization-microservice)
  - [Login](https://github.com/RicardoCampinas/digitus-forum-login-microservice)
